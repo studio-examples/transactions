@@ -1,3 +1,9 @@
+CREATE DATABASE company;
+USE company;
+CREATE USER 'generatedata'@'localhost' identified by 'generatedata';
+
+GRANT ALL PRIVILEGES ON company.* TO generatedata@localhost IDENTIFIED BY 'generatedata';
+
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,

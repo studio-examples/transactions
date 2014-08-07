@@ -1,0 +1,3 @@
+org\mule\examples\Order.class
+org\mule\examples\TestComponent.class
+org\exceptions\MyException.class

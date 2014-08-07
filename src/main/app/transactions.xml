@@ -21,7 +21,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
         	<mulexml:alias name="order" class="org.mule.examples.Order"/>
         </mulexml:xml-to-object-transformer>
         <logger message="order: #[payload]" level="INFO" doc:name="Log the order"/>
-        <ee:multi-transactional action="ALWAYS_BEGIN" doc:name="Transactional">            
+        <ee:multi-transactional action="ALWAYS_BEGIN" doc:name="Transactional">
             <db:insert config-ref="MySQL_Configuration" doc:name="Insert into Database">
                 <db:parameterized-query><![CDATA[insert into orders(item_id,item_units,customer_id) values (#[payload.itemId], #[payload.itemUnits], #[payload.customerId])]]></db:parameterized-query>
             </db:insert>
